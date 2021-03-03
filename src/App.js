@@ -1,12 +1,12 @@
-import './App.css';
 import Hospitals from './components/GetHospitals';
+import { Container } from 'reactstrap';
 
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">Best Hospitals Near me</header>
+		<Container>
+			<h1 className="App-header">Best Hospitals Near me</h1>
 			<Hospitals />
-		</div>
+		</Container>
 	);
 }
 

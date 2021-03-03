@@ -1,5 +1,4 @@
 import React from 'react';
-import './table.css';
 
 const Table = ({ hospitalData }) => {
 	return (
@@ -23,9 +22,10 @@ const Table = ({ hospitalData }) => {
 									<td>{state}</td>
 									<td>{MRSA_W_Z_Score}</td>
 									<td>
-										{hospitalData.paymentReduction === 'No' ? (
+										{paymentReduction}
+										{/* {hospitalData.paymentReduction === 'No' ? (
 											{ paymentReduction }
-										) : null}
+										) : null} */}
 									</td>
 								</tr>
 							);
