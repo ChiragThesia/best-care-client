@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
-import Table from './Table';
 import TableContainer from './TableContainer';
 import SelectUSState from 'react-select-us-states';
 
@@ -23,25 +22,25 @@ function GetHospitals() {
 		},
 		[ usState ]
 	);
-	console.log('data', data);
+
 	const columns = useMemo(
 		() => [
 			{
 				Header: 'Hospital Name',
-				accessor: 'Hospital Name'
+				accessor: 'hospitalName'
 			},
 			{
 				Header: 'State',
-				accessor: 'State'
+				accessor: 'state'
 			},
 			{
 				Header: 'MRSA W Z Score',
-				accessor: 'MRSA W Z Score'
-			},
-			{
-				Header: 'Payment Reduction',
-				accessor: 'Payment Reduction '
+				accessor: 'MRSA_W_Z_Score'
 			}
+			// {
+			// 	Header: 'Payment Reduction',
+			// 	accessor: 'paymentReduction'
+			// }
 		],
 		[]
 	);
@@ -51,8 +50,7 @@ function GetHospitals() {
 			<p>
 				Select Your State: <SelectUSState value="Texas" onChange={setUsState} />
 			</p>
-			<Table hospitalData={data} />
-			{/* <TableContainer columns={columns} data={data} /> */}
+			<TableContainer columns={columns} data={data} />
 		</div>
 	);
 }

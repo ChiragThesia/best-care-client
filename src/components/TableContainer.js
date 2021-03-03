@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTable, useSortBy } from 'react-table';
 import { Table } from 'reactstrap';
-import { FaCaretSquareUp, FaCaretSquareDown } from 'react-icons/fa';
 
 const TableContainer = ({ columns, data }) => {
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable(
@@ -16,18 +15,12 @@ const TableContainer = ({ columns, data }) => {
 		<Table bordered hover {...getTableProps()}>
 			<thead>
 				{headerGroups.map((headerGroup) => (
-					<tr>
+					<tr {...headerGroup.getHeaderGroupProps()}>
 						{headerGroup.headers.map((column) => (
-							<th {...column.getHeaderProps()}>
+							<th {...column.getHeaderProps(column.getSortByToggleProps())}>
 								{column.render('Header')}
 								<span>
-									{column.isSorted ? column.isSortedDesc ? (
-										<FaCaretSquareDown />
-									) : (
-										<FaCaretSquareUp />
-									) : (
-										''
-									)}
+									{column.isSorted ? column.isSortedDesc ? '👇' : '👆' : ''}
 								</span>
 							</th>
 						))}
