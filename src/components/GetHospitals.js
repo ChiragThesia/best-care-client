@@ -19,7 +19,7 @@ function GetHospitals() {
 	useEffect(
 		() => {
 			axios
-				.get(`http://localhost:8080/hospital/allHospitals/${usState}`)
+				.get(`https://intense-ocean-23310.herokuapp.com/hospital/allHospitals/${usState}`)
 				.then((res) => {
 					setData(filterBestHospitals(res.data));
 				})
