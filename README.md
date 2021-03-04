@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/137b6026-9663-420c-acec-c6446dbd0a16/deploy-status)](https://app.netlify.com/sites/beyondcare/deploys)
 # Best Care Client 
 Beyond Trust - API Engineer code challange - Client Application
 
