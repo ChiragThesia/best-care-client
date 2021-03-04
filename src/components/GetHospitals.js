@@ -9,12 +9,19 @@ function GetHospitals() {
 	const [ data, setData ] = useState([]);
 	const [ usState, setUsState ] = useState('AL');
 
+	const filterBestHospitals = (allHospitals) => {
+		const goodHospitals = allHospitals.filter(
+			(hospital) => hospital.paymentReduction === 'No' && hospital.MRSA_W_Z_Score !== 'N/A'
+		);
+		return goodHospitals;
+	};
+
 	useEffect(
 		() => {
 			axios
 				.get(`http://localhost:8080/hospital/allHospitals/${usState}`)
 				.then((res) => {
-					setData(res.data);
+					setData(filterBestHospitals(res.data));
 				})
 				.catch((error) => {
 					console.log(error);
@@ -36,11 +43,11 @@ function GetHospitals() {
 			{
 				Header: 'MRSA W Z Score',
 				accessor: 'MRSA_W_Z_Score'
+			},
+			{
+				Header: 'Payment Reduction',
+				accessor: 'paymentReduction'
 			}
-			// {
-			// 	Header: 'Payment Reduction',
-			// 	accessor: 'paymentReduction'
-			// }
 		],
 		[]
 	);
