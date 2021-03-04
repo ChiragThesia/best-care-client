@@ -54,9 +54,9 @@ function GetHospitals() {
 
 	return (
 		<div>
-			<p>
-				Select Your State: <SelectUSState value="Texas" onChange={setUsState} />
-			</p>
+			<h5>
+				Select Your State: <SelectUSState onChange={setUsState} />
+			</h5>
 			<TableContainer columns={columns} data={data} />
 		</div>
 	);

@@ -13,7 +13,7 @@ const TableContainer = ({ columns, data }) => {
 	);
 
 	return (
-		<div>
+		<div className="tableContainer">
 			<p className="instruction">You can sort each column by clicking on the title</p>
 			<Table bordered hover {...getTableProps()}>
 				<thead>
