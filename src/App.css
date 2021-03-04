@@ -1,6 +1,7 @@
 *{
   margin:0;
-  padding:0;
+  padding:5px 0 0 0;
+  
 }
 
 .container{
@@ -9,14 +10,33 @@
   justify-content: center;
   scroll-behavior: smooth;
   font-family: "Helvetica Neue", sans-serif;
-
+  background: #06a5ca;
 }
 
-.navContainer{
+.navbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
+  margin:0;
+  padding:0;
+  overflow: hidden;
+  background-color: #06a5ca;
+  top: 0;
+  width: 100%
 }
 
 .navLink{
-  padding: 15px 0;
+  float: left;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  padding: 0 50px 0 50px;
+  height: 30px
+  
+}
 
+.navLink:hover{
+  background-color:white;
+  cursor: pointer;
 }

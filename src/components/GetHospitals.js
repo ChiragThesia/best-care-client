@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import TableContainer from './TableContainer';
 import SelectUSState from 'react-select-us-states';
+import './simpleComponent.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -54,9 +55,10 @@ function GetHospitals() {
 
 	return (
 		<div>
-			<h5>
-				Select Your State: <SelectUSState onChange={setUsState} />
-			</h5>
+			<h6>
+				Select Your Area📍: <SelectUSState onChange={setUsState} />
+			</h6>
+			<hr />
 			<TableContainer columns={columns} data={data} />
 		</div>
 	);

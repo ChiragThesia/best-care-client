@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTable, useSortBy } from 'react-table';
 import { Table } from 'reactstrap';
-import './tableContainer.css';
+import './hospital.css';
 
 const TableContainer = ({ columns, data }) => {
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable(
@@ -14,9 +14,8 @@ const TableContainer = ({ columns, data }) => {
 
 	return (
 		<div className="tableContainer">
-			<p className="instruction">You can sort each column by clicking on the title</p>
 			<Table bordered hover {...getTableProps()}>
-				<thead>
+				<thead className="tableHead">
 					{headerGroups.map((headerGroup) => (
 						<tr {...headerGroup.getHeaderGroupProps()}>
 							{headerGroup.headers.map((column) => (
